@@ -1,0 +1,28 @@
+<app-Header></app-Header>
+<!-- can be added like this too -->
+ <main>
+    <!-- <ul id="users">
+       <li><app-user (select)="onSelectedUser($event)" [id]="users[0].id" [avatar]="users[0].avatar" [name]="users[0].name"/></li> 
+       // or 
+        <li><app-user (select)="onSelectedUser($event)" [user]="users[0]" /></li>
+
+        <li><app-user (select)="onSelectedUser($event)" [user]="users[1]" /></li>
+        
+    </ul> -->
+
+    <!-- <app-tasks [name]="selected?.name"></app-tasks> -->
+     <!-- or use ternary reduce runtime errors -->
+    <!-- <app-tasks [name]="selected ? selected.name : ''"></app-tasks> -->
+
+
+     <ul id="users">
+        @for(user of users; track user.id) {
+        <li><app-user [selected] = "user.id === selectedUserId" (select)="onSelectedUser($event)" [user]="user" /></li>
+        }
+     </ul>
+     @if(selected) {
+        <app-tasks [name]="selected.name" [id]="selected.id"></app-tasks>
+     } @else {
+        <p>select user</p>
+     }
+ </main>

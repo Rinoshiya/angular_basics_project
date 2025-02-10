@@ -1,0 +1,25 @@
+@if(onTaskClicked) {
+    <!-- <app-new-task (closedialog)="closedialogDrop()" (addData)="onAddTask($event)"></app-new-task> -->
+     <!-- using service -->
+    <app-new-task [userId]="id" (close)="oncloseAddTask()"></app-new-task>
+    
+}
+<section #tasks>
+    <header>
+        <h2>{{ name }}'s Tasks</h2>
+        <menu>
+            <button (click)="onAddingTask()">Add task</button>
+        </menu>
+    </header>
+    <ul >
+        <!-- @for (task of sele; track task.id) { -->
+            <li *ngFor="let task of selectedUserTask">
+                <!-- use service -->
+                <!-- <app-task [task]="task" (complete)="onComplete($event)"></app-task> -->
+                <app-task [task]="task"></app-task>
+
+            </li>
+        <!-- } -->
+        
+    </ul>
+</section>
