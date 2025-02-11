@@ -12,14 +12,14 @@
         </menu>
     </header>
     <ul >
-        <!-- @for (task of sele; track task.id) { -->
-            <li *ngFor="let task of selectedUserTask">
+        @for (task of selectedUserTask; track task.id) {
+            <li>
                 <!-- use service -->
                 <!-- <app-task [task]="task" (complete)="onComplete($event)"></app-task> -->
                 <app-task [task]="task"></app-task>
 
             </li>
-        <!-- } -->
+        }
         
     </ul>
 </section>
