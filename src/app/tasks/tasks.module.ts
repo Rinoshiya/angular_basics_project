@@ -15,7 +15,7 @@ import { CommonModule } from "@angular/common";
     ],
     exports: [TasksComponent],// used in appcomp that is declared in app module
     imports: [CommonModule,SharedModule, FormsModule] // is cannot  get a component add here to access,
-    // common module for using datepipe which consist it.
+    // common module for using datepipe which consist it
 })
 
 export class TaskModule {}
